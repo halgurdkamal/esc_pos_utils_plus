@@ -194,7 +194,8 @@ class Generator {
         final pos =
             (i * widthPx) + i * missingPx; // Corrected position calculation
          for (int j = 0; j < extra.length; j++) {
-          oneChannelBytes[pos + j] = extra[j];
+          print('pos: $pos, j: $j extra[j]: ${extra[j]}');
+          oneChannelBytes.insert(pos + j, extra[j]);
         }
       }
     }
