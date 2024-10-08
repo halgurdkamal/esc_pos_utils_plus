@@ -199,7 +199,7 @@ class Generator {
         oneChannelBytes.insertAll(pos, extra);
       }
     }
-
+    }
     //  if (widthPx % 8 != 0) {
     //   final targetWidth = (widthPx + 8) - (widthPx % 8);
     //   final missingPx = targetWidth - widthPx;
