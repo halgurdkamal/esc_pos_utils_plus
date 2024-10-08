@@ -172,7 +172,7 @@ class Generator {
     invert(image);
 
     // R/G/B channels are same -> keep only one channel
-    List<int> oneChannelBytes = [];
+    List<int> oneChannelBytes = <int>[];
     final List<int> buffer = image.getBytes(order: ChannelOrder.rgba);
     for (int i = 0; i < buffer.length; i += 4) {
       oneChannelBytes.add(buffer[i]);
