@@ -193,7 +193,9 @@ class Generator {
       for (int i = 0; i < heightPx; i++) {
         final pos =
             (i * widthPx) + i * missingPx; // Corrected position calculation
-        oneChannelBytes.insertAll(pos, extra);
+         for (int j = 0; j < extra.length; j++) {
+          oneChannelBytes[pos + j] = extra[j];
+        }
       }
     }
 
