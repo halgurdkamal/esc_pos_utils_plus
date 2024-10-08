@@ -190,13 +190,13 @@ class Generator {
         oneChannelBytes.add(0);
       }
 
+      if (widthPx % 8 != 0) {
+      final targetWidth = (widthPx + 8) - (widthPx % 8);
+      final missingPx = targetWidth - widthPx;
+      final extra = Uint8List(missingPx);
       for (int i = 0; i < heightPx; i++) {
-        final pos =
-            (i * widthPx) + i * missingPx; // Corrected position calculation
-         for (int j = 0; j < extra.length; j++) {
-          print('pos: $pos, j: $j extra[j]: ${extra[j]}');
-          oneChannelBytes.insert(pos + j, extra[j]);
-        }
+        final pos = (i * widthPx + widthPx) + i * missingPx;
+        oneChannelBytes.insertAll(pos, extra);
       }
     }
 
