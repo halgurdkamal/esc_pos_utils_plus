@@ -184,7 +184,7 @@ class Generator {
       final missingPx = targetWidth - widthPx;
       final extra = Uint8List(missingPx);
 
-      oneChannelBytes = <int>[];
+  
 
          for (int i = 0; i < (heightPx * targetWidth); i++) {
         oneChannelBytes.add(0);
